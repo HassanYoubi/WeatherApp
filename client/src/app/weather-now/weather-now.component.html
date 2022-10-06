@@ -1,0 +1,55 @@
+<div class="row d-flex justify-content-center align-items-center py-5">
+
+    <div class="text-warning text-center pb-3">
+        <h3>Bienvenue {{user?.username}}</h3>
+    </div>
+    <div *ngFor="let wttr of wttrObjects" class="col-md-8 col-lg-6 col-xl-4">
+        <div class="card" style="color: #4B515D; border-radius: 35px;">
+            <div class="card-body p-4">
+
+                <div class="text-center">
+                    <h6>
+                        {{wttr.nearest_area[0].areaName[0].value}},{{wttr.nearest_area[0].region[0].value}},{{wttr.nearest_area[0].country[0].value}}
+                    </h6>
+
+                </div>
+
+                <div class="d-flex flex-column text-center mt-4 mb-4">
+                    <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;">
+                        {{wttr.current_condition[0].FeelsLikeC}}°C </h6>
+
+                    <span class="small" style="color: #868B94">{{wttr.current_condition[0].weatherDesc[0].value}}</span>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1" style="font-size: 1rem;">
+                        <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1">
+                                Vents: {{wttr.current_condition[0].windspeedKmph}}
+                                km/h </span></div>
+                        <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1">Humidité:
+                                {{wttr.current_condition[0].humidity}}%
+                            </span></div>
+                        <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1">Uv:
+                                {{wttr.current_condition[0].uvIndex}}
+                            </span></div>
+
+                        <div><i class="fas fa-cloud-rain" style="color: #868B94;"> </i><span
+                                class="ms-1">Précipitations:
+                                {{wttr.current_condition[0].precipMM}} mm
+                            </span></div>
+                    </div>
+                    <div>
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
+                            width="100px">
+                    </div>
+                </div>
+                <div class=" pt-3">
+                    <p class="small">Dernière observation: {{wttr.current_condition[0].localObsDateTime}} (heure
+                        locale)</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

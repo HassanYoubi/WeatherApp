@@ -1,0 +1,61 @@
+<div class=" container py-3">
+    <div class="text-warning text-center pt-2 pb-3">
+        <h3>Bienvenue {{user?.username}}</h3>
+    </div>
+    <div class="row" *ngFor="let wttr of wttrObjects">
+        <h3 class="text-light text-center py-2">
+            {{wttr.nearest_area[0].areaName[0].value}},{{wttr.nearest_area[0].region[0].value}},{{wttr.nearest_area[0].country[0].value}}
+        </h3>
+
+
+
+        <div class="col-xl-3 col-lg-4 col-md-8" *ngFor="let wttrHourly of wttr.weather[0].hourly">
+            <div>
+                <div class="card my-3" style="color: #4B515D; border-radius: 35px; ">
+                    <div class="card-body p-4">
+
+                        <div class="d-flex">
+                            <h6 class="flex-grow-1">{{wttr.nearest_area[0].areaName[0].value}}</h6>
+
+                            <h6>{{wttrHourly.time | toDatePipe}}</h6>
+                        </div>
+
+                        <div class="d-flex flex-column text-center mt-5 mb-4">
+                            <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;">
+                                {{wttrHourly.FeelsLikeC}}°C </h6>
+
+                            <span class="small" style="color: #868B94">{{wttrHourly.weatherDesc[0].value}}</span>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1" style="font-size: 1rem;">
+                                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1">
+                                        Vents: {{wttrHourly.windspeedKmph}}
+                                        km/h </span></div>
+                                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span
+                                        class="ms-1">Humidité:
+                                        {{wttrHourly.humidity}}%
+                                    </span></div>
+                                <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1">Uv:
+                                        {{wttrHourly.uvIndex}}
+                                    </span></div>
+                                <div><i class="fas fa-cloud-rain fa-fw" style="color: #868B94;"></i> <span
+                                        class="ms-1">Précipitations:&nbsp;
+                                        {{wttrHourly.precipMM}}&nbsp;mm
+                                    </span></div>
+                            </div>
+                            <div>
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
+                                    width="50px">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--duxieme for-->
+    </div>
+    <!--premier for-->
+</div>
