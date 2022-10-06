@@ -11,10 +11,10 @@ Retrieve weather data from an API
 
 ![](images/img2)
 
-![](images/img3)
+![](images/img3.png)
 
-![](images/img4)
+![](images/img4.png)
 
 ![](images/img5)
-![](images/img6)
+![](images/img6.png)
 
