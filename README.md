@@ -7,7 +7,7 @@ Backend built with NodeJs, Express and MongoDB
 
 Retrieve weather data from an API
 
-![](images/img1)
+![](images/img1.png)
 
 ![](images/img2)
 
